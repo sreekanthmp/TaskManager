@@ -8,7 +8,7 @@ from rest_framework.exceptions import AuthenticationFailed
 from django.http import JsonResponse
 
 
-class GraphQLView(AuthenticatedGraphQLView):
+class GraphQLModelView(AuthenticatedGraphQLView):
     @method_decorator(csrf_exempt)
     def dispatch(self, request, *args, **kwargs):
         try:
