@@ -1,6 +1,6 @@
 from django.urls import path
 from tasks.schema import schema
-from tasks.views.graphql_auth import GraphQLView  
+from tasks.views.graphql_auth import GraphQLModelView  
 from .views.token_auth import CustomAuthToken
 from .views.tasks import TaskModelViewSet
 
@@ -11,6 +11,6 @@ urlpatterns = [
         {'get': 'list', 'post': 'create'}), name='task-list-create'),
     path('api/task/<int:pk>', TaskModelViewSet.as_view(
         {'put': 'update', 'delete': 'destroy'}), name='task-update-delete'),
-    path("graphql", GraphQLView.as_view(graphiql=True, 
+    path("graphql", GraphQLModelView.as_view(graphiql=True, 
                                                       schema=schema)),
 ]

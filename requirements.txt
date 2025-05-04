@@ -2,3 +2,4 @@ mysqlclient
 django-environ
 Django==4.1.7
 djangorestframework
+graphene_django
